@@ -4,10 +4,10 @@ import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
-import log from "@src/config/winston";
-import AppError from "./utils/appError.util";
+import log from "@config/winston";
+import AppError from "@utils/appError.util";
 import hpp from "hpp";
-import errorhandler from "./middleware/error/errorhandler";
+import errorhandler from "@middleware/error/errorhandler";
 import dbConnection from "@src/database/connection";
 dotenv.config();
 
