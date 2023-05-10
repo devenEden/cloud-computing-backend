@@ -1,5 +1,5 @@
-import envVars from "@src/config/envVars";
-import log from "@src/config/winston";
+import envVars from "@config/envVars";
+import log from "@config/winston";
 import mongoose from "mongoose";
 
 export default () => {

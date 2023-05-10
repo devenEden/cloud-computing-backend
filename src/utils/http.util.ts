@@ -1,6 +1,6 @@
 import HttpStatusCodes from "@src/constants/httpStatusCodes";
-import { ResponseData } from "@src/interfaces/app/app.interface";
-import { serverResponse } from "@src/types/app/app.types";
+import { ResponseData } from "@src/utils/interfaces/app/app.interface";
+import { serverResponse } from "@src/utils/types/app.types";
 import { NextFunction, Response } from "express";
 import AppError from "./appError.util";
 

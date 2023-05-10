@@ -1,5 +1,5 @@
 import HttpStatusCodes from "@src/constants/httpStatusCodes";
-import { appError } from "@src/interfaces/app/app.interface";
+import { appError } from "@utils/interfaces/app/app.interface";
 
 class AppError extends Error implements appError {
   statusCode: HttpStatusCodes;
