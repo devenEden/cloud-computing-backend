@@ -7,7 +7,7 @@
     "build": "rimraf dist && swc ./src -d dist",
     "lint": "npx eslint --ext .ts src/",
     "lint:tests": "npx eslint --ext .ts spec/",
-    "start": "node -r module-alias/register ./dist/server.js --env=production",
+    "start": "npm  i && npm run build && node -r module-alias/register ./dist/server.js --env=production",
     "dev": "nodemon"
   },
   "keywords": [],
@@ -19,7 +19,8 @@
     "@services": "dist/services",
     "@middleware": "dist/middleware",
     "@models": "dist/database/models",
-    "@config": "dist/config"
+    "@config": "dist/config",
+    "@utils": "dist/utils"
   },
   "dependencies": {
     "@types/passport-local": "^1.0.35",
@@ -39,11 +40,11 @@
     "mongoose": "^7.1.0",
     "morgan": "^1.10.0",
     "winston": "^3.8.2",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.57"
   },
   "devDependencies": {
-    "@swc/cli": "^0.1.62",
-    "@swc/core": "^1.3.57",
     "@types/bcrypt": "^5.0.0",
     "@types/connect-mongo": "^3.1.3",
     "@types/cors": "^2.8.13",
