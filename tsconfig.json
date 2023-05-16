@@ -76,9 +76,7 @@
     },
     "useUnknownInCatchVariables": false
   },
-  "include": [
-    "src/**/*.ts"
-, "custom.d.ts"  ],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "src/public/"
   ]
