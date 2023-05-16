@@ -13,8 +13,6 @@ import indexRouter from "./routes/index.routes";
 import HttpStatusCodes from "./constants/httpStatusCodes";
 dotenv.config();
 
-const c = '';
-
 const app = express();
 const limiter = rateLimit({
   max: 100,
