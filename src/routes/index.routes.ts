@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import BlogController from "@controllers/blog.controler";
 import UserController from "@controllers/users.controller";
-import authMiddleware from "@src/middleware/auth/authRoute.middleware";
 import express from "express";
 
 const indexRouter = express.Router();
