@@ -1,5 +1,4 @@
 import HttpStatusCodes from "@src/constants/httpStatusCodes";
-import { ResponseData } from "@src/utils/interfaces/app/app.interface";
 import { serverResponse } from "@src/utils/types/app.types";
 import { NextFunction, Response } from "express";
 import AppError from "./appError.util";
@@ -8,7 +7,7 @@ class HttpResponse {
   statusCode: HttpStatusCodes;
   message: string | null;
   type: boolean;
-  data: unknown[];
+  data: object | undefined;
   response: serverResponse;
   downloadPath: string | null;
 
@@ -37,10 +36,11 @@ class HttpResponse {
     res: Response,
     statusCode: HttpStatusCodes,
     message: string,
-    data: ResponseData[] = []
+    data?: object
   ) {
     this.statusCode = statusCode;
-    this.message = message;
+    this.response.server.status = true;
+    this.response.server.message = message;
     this.type = true;
     this.data = data;
 
@@ -56,18 +56,8 @@ class HttpResponse {
    * @param {String} statusCode Error status code
    * @param {String} message Error Message
    */
-  sendError(
-    next: NextFunction,
-    statusCode: HttpStatusCodes,
-    message: string,
-    errorData: ResponseData[] = []
-  ) {
-    this.statusCode = statusCode;
-    this.message = message;
-    this.type = true;
-    this.data = errorData;
-
-    return next(new AppError(message, statusCode, errorData));
+  sendError(next: NextFunction, message: string, error: AppError) {
+    return next(new AppError(message, error.statusCode, error.errorData));
   }
 
   download(res: Response) {

@@ -1,9 +1,9 @@
 import HttpStatusCodes from "@src/constants/httpStatusCodes";
-import { appError } from "@utils/interfaces/app/app.interface";
+import { appError } from "@src/utils/interfaces/app/app.interface";
 
 class AppError extends Error implements appError {
   statusCode: HttpStatusCodes;
-  errorData?: object | undefined;
+  errorData?: object;
 
   constructor(
     message: string,

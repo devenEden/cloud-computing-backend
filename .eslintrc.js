@@ -59,7 +59,6 @@ module.exports = {
     "no-tabs": ["error", { allowIndentationTabs: true }],
     "no-this-before-super": 2,
     "no-undef": 2,
-    "no-underscore-dangle": ["error", { allow: ["__dirname", "__basedir"] }],
     "no-unexpected-multiline": 2,
     "no-unreachable": 2,
     "no-unsafe-finally": 2,

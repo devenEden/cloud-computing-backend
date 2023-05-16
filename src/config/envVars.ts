@@ -25,5 +25,8 @@ export default {
     Secret: process.env.JWT_SECRET ?? "",
     Exp: process.env.COOKIE_EXP ?? "",
   },
+  Passwords: {
+    saltRounds: process.env.SALT_ROUND,
+  },
   Database: { connection: process.env.MONGO_DB_CONNECTION },
 } as const;
